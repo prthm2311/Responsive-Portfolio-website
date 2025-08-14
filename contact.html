@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Pratham</title>
+    <link rel="stylesheet" href="style3.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+
+    <div class="container">
+      <header>
+        <h1 class="logo">Pratham</h1>
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html"><strong>Home</strong></a>
+            </li>
+            <li>
+              <a href="projects.html"><strong>Projects</strong></a>
+            </li>
+            <li>
+              <a href="about.html"><strong>About</strong></a>
+            </li>
+            <li>
+              <a href="contact.html"><strong>Contact</strong></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="contact-section">
+        <h2 class="section-title">Contact Me</h2>
+
+        <form action="#" method="post" class="contact-form">
+          <label for="email">Your Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </main>
+
+      <footer>
+        <p>© 2025 Pratham. All rights reserved.</p>
+      </footer>
+    </div>
+    <script>
+      document
+        .getElementById("darkModeToggle")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("dark-mode");
+
+          if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+          } else {
+            localStorage.setItem("theme", "light");
+          }
+        });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+      });
+    </script>
+  </body>
+</html>
